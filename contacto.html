@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -11,28 +10,28 @@
 <body>
   <div class="page">
     <header>
-  <div class="container nav">
-    <a href="index.html" class="nav-brand">
-      <div class="nav-logo">LEC</div>
-      <span>Revista LEC</span>
-    </a>
+      <div class="container nav">
+        <a href="index.html" class="nav-brand">
+          <div class="nav-logo">LEC</div>
+          <span>Revista LEC</span>
+        </a>
 
-    <!-- Botón hamburguesa -->
-    <button class="nav-toggle" aria-label="Abrir menú">☰</button>
+        <!-- Botón hamburguesa -->
+        <button class="nav-toggle" aria-label="Abrir menú">☰</button>
 
-    <!-- Menú -->
-    <nav class="nav-links">
-      <a href="index.html">Inicio</a>
-      <a href="revista.html">Sobre la revista</a>
-      <a href="mision-vision.html">Misión y visión</a>
-      <a href="convocatorias.html">Convocatorias</a>
-      <a href="equipo.html">Equipo</a>
-      <a href="numeros.html">Números</a>
-      <a href="guia-autores.html">Guía para autores</a>
-      <a href="contacto.html">Contacto</a>
-    </nav>
-  </div>
-</header>
+        <!-- Menú -->
+        <nav class="nav-links">
+          <a href="index.html">Inicio</a>
+          <a href="revista.html">Sobre la revista</a>
+          <a href="mision-vision.html">Misión y visión</a>
+          <a href="convocatorias.html">Convocatorias</a>
+          <a href="equipo.html">Equipo</a>
+          <a href="numeros.html">Números</a>
+          <a href="guia-autores.html">Guía para autores</a>
+          <a href="contacto.html">Contacto</a>
+        </nav>
+      </div>
+    </header>
 
     <main>
       <section>
@@ -96,8 +95,20 @@
     </footer>
   </div>
 
+  <!-- JS: año + menú hamburguesa -->
   <script>
+    // Año en el footer
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Menú hamburguesa
+    const toggle = document.querySelector('.nav-toggle');
+    const links = document.querySelector('.nav-links');
+
+    if (toggle && links) {
+      toggle.addEventListener('click', () => {
+        links.classList.toggle('nav-open');
+      });
+    }
   </script>
 </body>
 </html>
