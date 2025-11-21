@@ -1,1 +1,84 @@
 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Convocatorias | Revista LEC</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Convocatorias para colaborar con la Revista LEC.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="container nav">
+        <a href="index.html" class="nav-brand">
+          <div class="nav-logo">LEC</div>
+          <span>Revista LEC</span>
+        </a>
+        <nav class="nav-links">
+          <a href="index.html">Inicio</a>
+          <a href="revista.html">Sobre la revista</a>
+          <a href="mision-vision.html">Misión y visión</a>
+          <a href="convocatorias.html">Convocatorias</a>
+          <a href="equipo.html">Equipo</a>
+          <a href="numeros.html">Números</a>
+          <a href="guia-autores.html">Guía para autores</a>
+          <a href="contacto.html">Contacto</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section>
+        <div class="section-inner">
+          <h1 class="section-title">Convocatorias</h1>
+          <p class="section-subtitle">
+            Aquí se publican las invitaciones para enviar artículos, sumarse al consejo editorial o colaborar en proyectos específicos.
+          </p>
+
+          <div class="call-grid">
+            <article class="card">
+              <h2 class="card-title">Convocatoria de artículos · Número 1</h2>
+              <p class="card-text">
+                Aquí puedes describir la temática del número, fechas importantes (apertura y cierre de recepción de textos),
+                criterios básicos y a quién va dirigida la convocatoria.
+              </p>
+              <ul class="list">
+                <li>Fecha límite de envío: DD/MM/AAAA</li>
+                <li>Extensión sugerida: 1,500–3,000 palabras</li>
+                <li>Formato: ver Guía para autores</li>
+                <li>Envíos a: revista.lec@tec.mx</li>
+              </ul>
+            </article>
+
+            <article class="card">
+              <h2 class="card-title">Convocatoria para integrarse al equipo</h2>
+              <p class="card-text">
+                Usa este espacio para invitar a nuevas personas a formar parte del equipo editorial, de diseño, comunicación,
+                datos, etc.
+              </p>
+              <ul class="list">
+                <li>Perfiles buscados: redacción, edición, diseño, datos, redes sociales.</li>
+                <li>Requisitos: ser estudiante LEC (o afín) y tener interés en temas económicos.</li>
+                <li>Contacto: revista.lec@tec.mx o con el equipo editorial.</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <span>© <span id="year"></span> Revista LEC · Estudiantes de Economía</span>
+        <span>Sitio alojado en GitHub Pages</span>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
