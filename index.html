@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Revista LEC | Tec de Monterrey</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Revista estudiantil de la Licenciatura en Economía (LEC) del Tec de Monterrey.">
+  <!-- Google Font opcional (puedes quitarla si quieres aún más simple) -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-bg: #f7f8fa;
+      --color-primary: #003b5c;   /* Azul Tec aproximado */
+      --color-secondary: #00a499; /* Accent sobrio */
+      --color-text: #222222;
+      --color-muted: #6b7280;
+      --color-card-bg: #ffffff;
+      --shadow-soft: 0 10px 25px rgba(15, 23, 42, 0.08);
+      --radius-lg: 16px;
+      --max-width: 1080px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* Layout general */
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem;
+    }
+
+    /* Header y navegación */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(247, 248, 250, 0.97);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-weight: 600;
+      color: var(--color-primary);
+    }
+
+    .nav-logo {
+      width: 36px;
+      height: 36px;
+      border-radius: 999px;
+      background: var(--color-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      font-size: 0.8rem;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+      font-size: 0.9rem;
+      color: var(--color-muted);
+    }
+
+    .nav-links a {
+      padding: 0.25rem 0;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -0.15rem;
+      width: 0;
+      height: 2px;
+      background: var(--color-secondary);
+      transition: width 0.2s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    /* Hero */
+
+    .hero {
+      padding: 3rem 1.25rem 2.5rem;
+    }
+
+    .hero-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      background: rgba(0, 59, 92, 0.06);
+      color: var(--color-primary);
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+
+    .hero-title {
+      font-size: clamp(2rem, 4vw, 2.6rem);
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      color: var(--color-primary);
+    }
+
+    .hero-subtitle {
+      font-size: 0.98rem;
+      color: var(--color-muted);
+      margin-bottom: 1.5rem;
+      max-width: 32rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      padding: 0.7rem 1.1rem;
+      border-radius: 999px;
+      border: none;
+      font-size: 0.9rem;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: var(--color-primary);
+      color: #ffffff;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .btn-primary:hover {
+      background: #01273d;
+    }
+
+    .btn-outline {
+      border: 1px solid rgba(148, 163, 184, 0.9);
+      color: var(--color-muted);
+      background: #ffffff;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--color-primary);
+      color: var(--color-primary);
+    }
+
+    .hero-aside {
+      background: radial-gradient(circle at top left, #00a49933, transparent 55%),
+                  radial-gradient(circle at bottom right, #003b5c22, transparent 55%),
+                  #ffffff;
+      padding: 1.5rem;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .hero-aside-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--color-primary);
+    }
+
+    .hero-aside-text {
+      font-size: 0.85rem;
+      color: var(--color-muted);
+      margin-bottom: 1rem;
+    }
+
+    .hero-aside-tag {
+      display: inline-flex;
+      font-size: 0.75rem;
+      padding: 0.25rem 0.75rem;
+      background: rgba(0, 164, 153, 0.08);
+      color: var(--color-secondary);
+      border-radius: 999px;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Secciones genéricas */
+
+    section {
+      padding: 2rem 1.25rem;
+    }
+
+    .section-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--color-primary);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-subtitle {
+      font-size: 0.9rem;
+      color: var(--color-muted);
+      margin-bottom: 1.5rem;
+      max-width: 40rem;
+    }
+
+    /* Misión y visión */
+
+    .mv-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.25rem;
+    }
+
+    .card {
+      background: var(--color-card-bg);
+      border-radius: var(--radius-lg);
+      padding: 1.3rem;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .card-title {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--color-primary);
+    }
+
+    .card-text {
+      font-size: 0.9rem;
+      color: var(--color-muted);
+    }
+
+    /* Equipo */
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.25rem;
+    }
+
+    .team-card {
+      background: var(--color-card-bg);
+      border-radius: var(--radius-lg);
+      padding: 1.2rem;
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .team-role {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--color-secondary);
+      font-weight: 600;
+    }
+
+    .team-name {
+      font-size: 0.98rem;
+      font-weight: 600;
+      color: var(--color-text);
+    }
+
+    .team-meta {
+      font-size: 0.8rem;
+      color: var(--color-muted);
+    }
+
+    /* Números de la revista */
+
+    .issues-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.25rem;
+    }
+
+    .issue-card {
+      background: var(--color-card-bg);
+      border-radius: var(--radius-lg);
+      padding: 1.1rem;
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 0.6rem;
+    }
+
+    .issue-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--color-primary);
+    }
+
+    .issue-meta {
+      font-size: 0.8rem;
+      color: var(--color-muted);
+    }
+
+    .issue-actions {
+      margin-top: 0.3rem;
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    /* Contacto */
+
+    .contact-box {
+      background: var(--color-card-bg);
+      border-radius: var(--radius-lg);
+      padding: 1.3rem;
+      box-shadow: var(--shadow-soft);
+      font-size: 0.9rem;
+      color: var(--color-muted);
+    }
+
+    .contact-row {
+      margin-top: 0.55rem;
+    }
+
+    .contact-label {
+      font-weight: 600;
+      color: var(--color-primary);
+      font-size: 0.85rem;
+    }
+
+    /* Footer */
+
+    footer {
+      margin-top: auto;
+      border-top: 1px solid rgba(148, 163, 184, 0.25);
+      background: #ffffff;
+    }
+
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 1.2rem 1.25rem;
+      font-size: 0.8rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.5rem;
+      color: var(--color-muted);
+    }
+
+    /* Responsivo */
+
+    @media (max-width: 900px) {
+      .hero-inner {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-aside {
+        order: -1;
+      }
+
+      .mv-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .team-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .issues-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 2.2rem;
+      }
+
+      .team-grid,
+      .issues-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- HEADER -->
+    <header>
+      <div class="container nav">
+        <a href="#inicio" class="nav-brand">
+          <div class="nav-logo" aria-hidden="true">LEC</div>
+          <span>Revista LEC</span>
+        </a>
+        <nav class="nav-links">
+          <a href="#revista">La revista</a>
+          <a href="#mision-vision">Misión y visión</a>
+          <a href="#equipo">Equipo</a>
+          <a href="#numeros">Números</a>
+          <a href="#contacto">Contacto</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <main>
+      <section id="inicio" class="hero">
+        <div class="hero-inner">
+          <div>
+            <div class="hero-badge">
+              <span>Revista estudiantil · LEC</span>
+            </div>
+            <h1 class="hero-title">Espacio editorial de la Licenciatura en Economía</h1>
+            <p class="hero-subtitle">
+              Publicación hecha por estudiantes de Economía del Tec de Monterrey. Un lugar para análisis, datos e ideas sobre México y el mundo.
+            </p>
+            <div class="hero-actions">
+              <!-- Actualiza este href cuando tengas el PDF -->
+              <a class="btn btn-primary" href="pdf/revista-lec-numero-1.pdf" target="_blank" rel="noopener">
+                Ver último número
+              </a>
+              <a class="btn btn-outline" href="#revista">
+                Conoce la revista
+              </a>
+            </div>
+          </div>
+          <aside class="hero-aside" aria-label="Información rápida">
+            <span class="hero-aside-tag">Primera época</span>
+            <h2 class="hero-aside-title">Revista académica y de divulgación</h2>
+            <p class="hero-aside-text">
+              Buscamos acercar el análisis económico a la comunidad estudiantil y al público en general, combinando rigor y lenguaje claro.
+            </p>
+            <p class="hero-aside-text">
+              La revista es organizada, editada y producida por estudiantes de la LEC, con acompañamiento docente.
+            </p>
+          </aside>
+        </div>
+      </section>
+
+      <!-- LA REVISTA -->
+      <section id="revista">
+        <div class="section-inner">
+          <h2 class="section-title">¿Qué es la Revista LEC?</h2>
+          <p class="section-subtitle">
+            La Revista LEC es una iniciativa estudiantil que busca publicar textos de análisis económico, notas de divulgación,
+            reseñas y ensayos que dialoguen con los debates actuales en México y el mundo.
+          </p>
+          <div class="card">
+            <p class="card-text">
+              Aquí puedes agregar un párrafo breve con la historia de la revista, sus objetivos generales y el tipo de contenido que publican
+              (artículos de opinión, ensayos académicos breves, entrevistas, visualizaciones de datos, etc.).
+              Este texto se puede ajustar con cada volumen si la línea editorial evoluciona.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- MISIÓN Y VISIÓN -->
+      <section id="mision-vision">
+        <div class="section-inner">
+          <h2 class="section-title">Misión y visión</h2>
+          <p class="section-subtitle">
+            Una guía clara sobre lo que la revista quiere aportar a la comunidad LEC y al entorno más amplio.
+          </p>
+          <div class="mv-grid">
+            <div class="card">
+              <h3 class="card-title">Misión</h3>
+              <p class="card-text">
+                Crear un espacio editorial donde las y los estudiantes de Economía puedan publicar análisis, ensayos y contenidos
+                basados en evidencia, contribuyendo al debate público con perspectivas críticas e informadas.
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card-title">Visión</h3>
+              <p class="card-text">
+                Consolidarnos como una revista de referencia dentro de la comunidad universitaria, reconocida por la calidad de sus textos,
+                la seriedad en el uso de datos y la diversidad de voces estudiantiles que participan en cada número.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- EQUIPO -->
+      <section id="equipo">
+        <div class="section-inner">
+          <h2 class="section-title">Equipo editorial</h2>
+          <p class="section-subtitle">
+            La revista es coordinada por un equipo de alumnxs de la Licenciatura en Economía.
+            Aquí puedes actualizar nombres, roles y generaciones cada año.
+          </p>
+          <div class="team-grid">
+            <article class="team-card">
+              <div class="team-role">Dirección General</div>
+              <div class="team-name">Nombre Apellido</div>
+              <div class="team-meta">LEC · Generación 20XX</div>
+            </article>
+            <article class="team-card">
+              <div class="team-role">Dirección Editorial</div>
+              <div class="team-name">Nombre Apellido</div>
+              <div class="team-meta">LEC · Generación 20XX</div>
+            </article>
+            <article class="team-card">
+              <div class="team-role">Diseño y maquetación</div>
+              <div class="team-name">Nombre Apellido</div>
+              <div class="team-meta">LEC · Generación 20XX</div>
+            </article>
+            <article class="team-card">
+              <div class="team-role">Comité de contenidos</div>
+              <div class="team-name">Nombre Apellido</div>
+              <div class="team-meta">LEC · Generación 20XX</div>
+            </article>
+            <article class="team-card">
+              <div class="team-role">Comunicación y difusión</div>
+              <div class="team-name">Nombre Apellido</div>
+              <div class="team-meta">LEC · Generación 20XX</div>
+            </article>
+            <article class="team-card">
+              <div class="team-role">Fotografía y archivo</div>
+              <div class="team-name">Nombre Apellido</div>
+              <div class="team-meta">LEC · Generación 20XX</div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- NÚMEROS DE LA REVISTA -->
+      <section id="numeros">
+        <div class="section-inner">
+          <h2 class="section-title">Números publicados</h2>
+          <p class="section-subtitle">
+            Cuando vayan saliendo nuevas ediciones, puedes ir agregando aquí las portadas, fechas y enlaces a los PDF.
+          </p>
+          <div class="issues-grid">
+            <!-- Número más reciente -->
+            <article class="issue-card">
+              <div>
+                <div class="issue-title">Número 1 · Título del número</div>
+                <div class="issue-meta">Año 20XX · Volumen 1</div>
+              </div>
+              <div class="issue-actions">
+                <a class="btn btn-primary" href="pdf/revista-lec-numero-1.pdf" target="_blank" rel="noopener">
+                  Ver PDF
+                </a>
+                <!-- Si en el futuro quieren descarga directa:
+                <a class="btn btn-outline" href="pdf/revista-lec-numero-1.pdf" download>
+                  Descargar
+                </a>
+                -->
+              </div>
+            </article>
+
+            <!-- Ejemplos para futuros números (puedes borrarlos o dejarlos como placeholder) -->
+            <article class="issue-card">
+              <div>
+                <div class="issue-title">Número 2 · Próximamente</div>
+                <div class="issue-meta">En preparación</div>
+              </div>
+              <div class="issue-actions">
+                <span style="font-size:0.8rem; color:var(--color-muted);">
+                  Convocatoria abierta
+                </span>
+              </div>
+            </article>
+
+            <article class="issue-card">
+              <div>
+                <div class="issue-title">Archivo</div>
+                <div class="issue-meta">Números anteriores</div>
+              </div>
+              <div class="issue-actions">
+                <span style="font-size:0.8rem; color:var(--color-muted);">
+                  Aquí puedes enlazar a un drive o carpeta con todos los números.
+                </span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACTO -->
+      <section id="contacto">
+        <div class="section-inner">
+          <h2 class="section-title">Contacto</h2>
+          <p class="section-subtitle">
+            Si quieres enviar un artículo, propuesta de sección o colaborar con la revista, utiliza los canales de contacto del equipo.
+          </p>
+          <div class="contact-box">
+            <div class="contact-row">
+              <div class="contact-label">Correo de la revista</div>
+              <!-- Cambia este correo por el oficial de la revista -->
+              <p>revista.lec@tec.mx</p>
+            </div>
+            <div class="contact-row">
+              <div class="contact-label">Redes sociales</div>
+              <p>
+                Instagram: @revista_lec ·
+                LinkedIn: Revista LEC (ejemplos, puedes ajustarlo)
+              </p>
+            </div>
+            <div class="contact-row">
+              <div class="contact-label">Convocatorias</div>
+              <p>
+                Publicamos convocatorias para nuevos números y para incorporar integrantes al equipo editorial a través de correo y redes sociales.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-inner">
+        <span>© <span id="year"></span> Revista LEC · Estudiantes de Economía</span>
+        <span>Sitio alojado en GitHub Pages</span>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Actualiza automáticamente el año en el footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
