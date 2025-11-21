@@ -1,1 +1,81 @@
 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Números publicados | Revista LEC</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Números publicados de la Revista LEC.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="container nav">
+        <a href="index.html" class="nav-brand">
+          <div class="nav-logo">LEC</div>
+          <span>Revista LEC</span>
+        </a>
+        <nav class="nav-links">
+          <a href="index.html">Inicio</a>
+          <a href="revista.html">Sobre la revista</a>
+          <a href="mision-vision.html">Misión y visión</a>
+          <a href="convocatorias.html">Convocatorias</a>
+          <a href="equipo.html">Equipo</a>
+          <a href="numeros.html">Números</a>
+          <a href="guia-autores.html">Guía para autores</a>
+          <a href="contacto.html">Contacto</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section>
+        <div class="section-inner">
+          <h1 class="section-title">Números publicados</h1>
+          <p class="section-subtitle">
+            Aquí puedes consultar los números de la revista. Cada tarjeta puede incluir portada, fecha de publicación y acceso al PDF.
+          </p>
+
+          <div class="issues-grid">
+            <article class="issue-card">
+              <div>
+                <div class="issue-title">Número 1 · Título del número</div>
+                <div class="issue-meta">Año 20XX · Volumen 1</div>
+              </div>
+              <div class="issue-actions">
+                <a class="btn btn-primary" href="pdf/revista-lec-numero-1.pdf" target="_blank" rel="noopener">
+                  Ver PDF
+                </a>
+              </div>
+            </article>
+
+            <article class="issue-card">
+              <div>
+                <div class="issue-title">Número 2 · Próximamente</div>
+                <div class="issue-meta">En preparación</div>
+              </div>
+              <div class="issue-actions">
+                <span style="font-size:0.8rem; color:var(--color-muted);">
+                  Próximamente detalles de la edición.
+                </span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <span>© <span id="year"></span> Revista LEC · Estudiantes de Economía</span>
+        <span>Sitio alojado en GitHub Pages</span>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
