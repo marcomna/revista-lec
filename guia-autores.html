@@ -1,1 +1,91 @@
 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Guía para autores | Revista LEC</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Guía para autores e instrucciones para publicar en la Revista LEC.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="container nav">
+        <a href="index.html" class="nav-brand">
+          <div class="nav-logo">LEC</div>
+          <span>Revista LEC</span>
+        </a>
+        <nav class="nav-links">
+          <a href="index.html">Inicio</a>
+          <a href="revista.html">Sobre la revista</a>
+          <a href="mision-vision.html">Misión y visión</a>
+          <a href="convocatorias.html">Convocatorias</a>
+          <a href="equipo.html">Equipo</a>
+          <a href="numeros.html">Números</a>
+          <a href="guia-autores.html">Guía para autores</a>
+          <a href="contacto.html">Contacto</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section>
+        <div class="section-inner">
+          <h1 class="section-title">Guía para autores</h1>
+          <p class="section-subtitle">
+            Instrucciones básicas para enviar textos a la revista. Puedes ir afinando esta guía con el tiempo.
+          </p>
+
+          <div class="guide-grid">
+            <article class="card">
+              <h2 class="card-title">Tipos de texto aceptados</h2>
+              <ul class="list">
+                <li>Artículos de análisis económico (corto).</li>
+                <li>Ensayos de reflexión sobre temas sociales y de política pública.</li>
+                <li>Notas de divulgación y visualizaciones de datos.</li>
+                <li>Reseñas de libros, informes o papers.</li>
+              </ul>
+            </article>
+
+            <article class="card">
+              <h2 class="card-title">Extensión y formato</h2>
+              <ul class="list">
+                <li>Extensión sugerida: 1,500–3,000 palabras.</li>
+                <li>Archivo en formato Word o PDF editable.</li>
+                <li>Fuente legible (por ejemplo, 12 pt, interlineado 1.5).</li>
+                <li>Citas y referencias en un formato consistente (APA, Chicago, etc.).</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-inner">
+          <h2 class="section-title">Proceso de envío y revisión</h2>
+          <div class="card">
+            <ul class="list">
+              <li>Envía tu texto a <strong>revista.lec@tec.mx</strong> con el asunto: “Propuesta de artículo – [Nombre]”.</li>
+              <li>Incluye tu nombre completo, matrícula y programa académico.</li>
+              <li>El comité editorial revisará el texto y podrá sugerir cambios antes de su publicación.</li>
+              <li>La aceptación de un texto depende de su calidad, pertinencia y espacio disponible en cada número.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <span>© <span id="year"></span> Revista LEC · Estudiantes de Economía</span>
+        <span>Sitio alojado en GitHub Pages</span>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
