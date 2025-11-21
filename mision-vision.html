@@ -1,1 +1,71 @@
 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Misión y visión | Revista LEC</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Misión y visión de la Revista LEC.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="container nav">
+        <a href="index.html" class="nav-brand">
+          <div class="nav-logo">LEC</div>
+          <span>Revista LEC</span>
+        </a>
+        <nav class="nav-links">
+          <a href="index.html">Inicio</a>
+          <a href="revista.html">Sobre la revista</a>
+          <a href="mision-vision.html">Misión y visión</a>
+          <a href="convocatorias.html">Convocatorias</a>
+          <a href="equipo.html">Equipo</a>
+          <a href="numeros.html">Números</a>
+          <a href="guia-autores.html">Guía para autores</a>
+          <a href="contacto.html">Contacto</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section>
+        <div class="section-inner">
+          <h1 class="section-title">Misión y visión</h1>
+          <p class="section-subtitle">
+            El para qué y el hacia dónde de la Revista LEC.
+          </p>
+          <div class="mv-grid">
+            <div class="card">
+              <h2 class="card-title">Misión</h2>
+              <p class="card-text">
+                Crear un espacio editorial donde las y los estudiantes de Economía puedan publicar análisis, ensayos y contenidos
+                basados en evidencia, contribuyendo al debate público con perspectivas críticas e informadas.
+              </p>
+            </div>
+            <div class="card">
+              <h2 class="card-title">Visión</h2>
+              <p class="card-text">
+                Consolidarnos como una revista de referencia dentro de la comunidad universitaria, reconocida por la calidad de sus textos,
+                la seriedad en el uso de datos y la diversidad de voces estudiantiles que participan en cada número.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <span>© <span id="year"></span> Revista LEC · Estudiantes de Economía</span>
+        <span>Sitio alojado en GitHub Pages</span>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
