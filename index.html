@@ -9,30 +9,33 @@
 </head>
 <body>
   <div class="page">
+
+    <!-- HEADER -->
     <header>
-  <div class="container nav">
-    <a href="index.html" class="nav-brand">
-      <div class="nav-logo">LEC</div>
-      <span>Revista LEC</span>
-    </a>
+      <div class="container nav">
+        <a href="index.html" class="nav-brand">
+          <div class="nav-logo">LEC</div>
+          <span>Revista LEC</span>
+        </a>
 
-    <!-- Botón hamburguesa -->
-    <button class="nav-toggle" aria-label="Abrir menú">☰</button>
+        <!-- Botón hamburguesa -->
+        <button class="nav-toggle" aria-label="Abrir menú">☰</button>
 
-    <!-- Menú -->
-    <nav class="nav-links">
-      <a href="index.html">Inicio</a>
-      <a href="revista.html">Sobre la revista</a>
-      <a href="mision-vision.html">Misión y visión</a>
-      <a href="convocatorias.html">Convocatorias</a>
-      <a href="equipo.html">Equipo</a>
-      <a href="numeros.html">Números</a>
-      <a href="guia-autores.html">Guía para autores</a>
-      <a href="contacto.html">Contacto</a>
-    </nav>
-  </div>
-</header>
+        <!-- Menú -->
+        <nav class="nav-links">
+          <a href="index.html">Inicio</a>
+          <a href="revista.html">Sobre la revista</a>
+          <a href="mision-vision.html">Misión y visión</a>
+          <a href="convocatorias.html">Convocatorias</a>
+          <a href="equipo.html">Equipo</a>
+          <a href="numeros.html">Números</a>
+          <a href="guia-autores.html">Guía para autores</a>
+          <a href="contacto.html">Contacto</a>
+        </nav>
+      </div>
+    </header>
 
+    <!-- MAIN -->
     <main>
       <section class="hero">
         <div class="hero-inner">
@@ -42,7 +45,8 @@
             </div>
             <h1 class="hero-title">Espacio editorial de la Licenciatura en Economía</h1>
             <p class="hero-subtitle">
-              Un proyecto creado por y para estudiantes de Economía del Tec de Monterrey. Análisis, datos e ideas sobre México y el mundo en un solo lugar.
+              Un proyecto creado por y para estudiantes de Economía del Tec de Monterrey. 
+              Análisis, datos e ideas sobre México y el mundo en un solo lugar.
             </p>
             <div class="hero-actions">
               <a class="btn btn-primary" href="pdf/revista-lec-numero-1.pdf" target="_blank" rel="noopener">
@@ -53,11 +57,13 @@
               </a>
             </div>
           </div>
+
           <aside class="hero-aside">
             <span class="hero-aside-tag">Primera época</span>
             <h2 class="hero-aside-title">Revista académica y de divulgación</h2>
             <p class="hero-aside-text">
-              Buscamos acercar el análisis económico a la comunidad estudiantil y al público en general, combinando rigor y lenguaje claro.
+              Buscamos acercar el análisis económico a la comunidad estudiantil y al público en general, 
+              combinando rigor y lenguaje claro.
             </p>
             <p class="hero-aside-text">
               La revista es organizada, editada y producida por alumnxs de la LEC, con acompañamiento docente.
@@ -70,7 +76,8 @@
         <div class="section-inner">
           <h2 class="section-title">Qué encontrarás aquí</h2>
           <p class="section-subtitle">
-            La revista combina textos de opinión, análisis con datos, entrevistas, reseñas y proyectos de investigación estudiantil.
+            La revista combina textos de opinión, análisis con datos, entrevistas, reseñas 
+            y proyectos de investigación estudiantil.
           </p>
           <div class="card">
             <ul class="list">
@@ -84,6 +91,7 @@
       </section>
     </main>
 
+    <!-- FOOTER -->
     <footer>
       <div class="footer-inner">
         <span>© <span id="year"></span> Revista LEC · Estudiantes de Economía</span>
@@ -92,8 +100,21 @@
     </footer>
   </div>
 
+  <!-- JS: año + menú hamburguesa -->
   <script>
+    // Año dinámico
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Menú hamburguesa
+    const toggle = document.querySelector('.nav-toggle');
+    const links = document.querySelector('.nav-links');
+
+    if (toggle && links) {
+      toggle.addEventListener('click', () => {
+        links.classList.toggle('nav-open');
+      });
+    }
   </script>
+
 </body>
 </html>
