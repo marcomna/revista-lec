@@ -1,1 +1,78 @@
 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Sobre la revista | Revista LEC</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Sobre la Revista LEC, proyecto editorial de estudiantes de Economía.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="container nav">
+        <a href="index.html" class="nav-brand">
+          <div class="nav-logo">LEC</div>
+          <span>Revista LEC</span>
+        </a>
+        <nav class="nav-links">
+          <a href="index.html">Inicio</a>
+          <a href="revista.html">Sobre la revista</a>
+          <a href="mision-vision.html">Misión y visión</a>
+          <a href="convocatorias.html">Convocatorias</a>
+          <a href="equipo.html">Equipo</a>
+          <a href="numeros.html">Números</a>
+          <a href="guia-autores.html">Guía para autores</a>
+          <a href="contacto.html">Contacto</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section>
+        <div class="section-inner">
+          <h1 class="section-title">Sobre la revista</h1>
+          <p class="section-subtitle">
+            Una revista hecha por estudiantes de la Licenciatura en Economía, que busca abrir un espacio de reflexión y análisis sobre los temas que marcan nuestra realidad.
+          </p>
+          <div class="card">
+            <p class="card-text">
+              Aquí puedes escribir la historia corta de cómo nació la revista: quiénes impulsaron la idea, en qué semestre, qué necesidad vieron en la comunidad LEC, etc.
+              También puedes definir el tipo de textos que priorizan (ensayos, columnas, artículos de investigación, reseñas de libros, entrevistas, etc.).
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-inner">
+          <h2 class="section-title">Línea editorial</h2>
+          <p class="section-subtitle">
+            Una guía general sobre qué tipo de contenido buscamos publicar.
+          </p>
+          <div class="card">
+            <ul class="list">
+              <li>Textos basados en evidencia y argumentos claros.</li>
+              <li>Uso responsable de datos y fuentes.</li>
+              <li>Perspectivas diversas sobre temas económicos y sociales.</li>
+              <li>Lenguaje accesible para público universitario amplio.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <span>© <span id="year"></span> Revista LEC · Estudiantes de Economía</span>
+        <span>Sitio alojado en GitHub Pages</span>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
