@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -10,52 +9,62 @@
 </head>
 <body>
   <div class="page">
+
+    <!-- HEADER -->
     <header>
-  <div class="container nav">
-    <a href="index.html" class="nav-brand">
-      <div class="nav-logo">LEC</div>
-      <span>Revista LEC</span>
-    </a>
+      <div class="container nav">
+        <a href="index.html" class="nav-brand">
+          <div class="nav-logo">LEC</div>
+          <span>Revista LEC</span>
+        </a>
 
-    <!-- Botón hamburguesa -->
-    <button class="nav-toggle" aria-label="Abrir menú">☰</button>
+        <!-- Botón hamburguesa -->
+        <button class="nav-toggle" aria-label="Abrir menú">☰</button>
 
-    <!-- Menú -->
-    <nav class="nav-links">
-      <a href="index.html">Inicio</a>
-      <a href="revista.html">Sobre la revista</a>
-      <a href="mision-vision.html">Misión y visión</a>
-      <a href="convocatorias.html">Convocatorias</a>
-      <a href="equipo.html">Equipo</a>
-      <a href="numeros.html">Números</a>
-      <a href="guia-autores.html">Guía para autores</a>
-      <a href="contacto.html">Contacto</a>
-    </nav>
-  </div>
-</header>
+        <!-- Menú -->
+        <nav class="nav-links">
+          <a href="index.html">Inicio</a>
+          <a href="revista.html">Sobre la revista</a>
+          <a href="mision-vision.html">Misión y visión</a>
+          <a href="convocatorias.html">Convocatorias</a>
+          <a href="equipo.html">Equipo</a>
+          <a href="numeros.html">Números</a>
+          <a href="guia-autores.html">Guía para autores</a>
+          <a href="contacto.html">Contacto</a>
+        </nav>
+      </div>
+    </header>
 
+    <!-- MAIN -->
     <main>
+
+      <!-- SOBRE LA REVISTA -->
       <section>
         <div class="section-inner">
           <h1 class="section-title">Sobre la revista</h1>
           <p class="section-subtitle">
             Una revista hecha por estudiantes de la Licenciatura en Economía, que busca abrir un espacio de reflexión y análisis sobre los temas que marcan nuestra realidad.
           </p>
+
           <div class="card">
             <p class="card-text">
-              Aquí puedes escribir la historia corta de cómo nació la revista: quiénes impulsaron la idea, en qué semestre, qué necesidad vieron en la comunidad LEC, etc.
-              También puedes definir el tipo de textos que priorizan (ensayos, columnas, artículos de investigación, reseñas de libros, entrevistas, etc.).
+              Aquí puedes escribir la historia corta de cómo nació la revista: quiénes impulsaron la idea,
+              en qué semestre surgió, qué necesidad vieron en la comunidad LEC, etc.
+              También puedes definir el tipo de textos que priorizan (ensayos, columnas, artículos de investigación,
+              reseñas de libros, entrevistas, etc.).
             </p>
           </div>
         </div>
       </section>
 
+      <!-- LÍNEA EDITORIAL -->
       <section>
         <div class="section-inner">
           <h2 class="section-title">Línea editorial</h2>
           <p class="section-subtitle">
             Una guía general sobre qué tipo de contenido buscamos publicar.
           </p>
+
           <div class="card">
             <ul class="list">
               <li>Textos basados en evidencia y argumentos claros.</li>
@@ -66,18 +75,34 @@
           </div>
         </div>
       </section>
+
     </main>
 
+    <!-- FOOTER -->
     <footer>
       <div class="footer-inner">
         <span>© <span id="year"></span> Revista LEC · Estudiantes de Economía</span>
         <span>Sitio alojado en GitHub Pages</span>
       </div>
     </footer>
+
   </div>
 
+  <!-- JS: año + menú hamburguesa -->
   <script>
+    // Año dinámico en el footer
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Menú hamburguesa
+    const toggle = document.querySelector('.nav-toggle');
+    const links = document.querySelector('.nav-links');
+
+    if (toggle && links) {
+      toggle.addEventListener('click', () => {
+        links.classList.toggle('nav-open');
+      });
+    }
   </script>
+
 </body>
 </html>
