@@ -457,11 +457,8 @@ footer {
 }
 
 @media (max-width: 640px) {
-  .nav-links {
-    display: none;
-  }
-
   .hero {
     padding-top: 2.2rem;
   }
 }
+
